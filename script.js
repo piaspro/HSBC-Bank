@@ -8,39 +8,35 @@ login.addEventListener('click', function () {
 // deposit event handler
 const depositBtn = document.getElementById('deposit');
 depositBtn.addEventListener('click', function () {
-    const depositAmount = document.getElementById('depositInput').value;
-    const depositNumber = parseFloat(depositAmount);
+    const depositNumber = transformFloat('depositInput')
 
-    const depositAdd = document.getElementById('depositAdded').innerText;
-    const currentDeposit = parseFloat(depositAdd);
-    const totalDeposit = depositNumber + currentDeposit;
+    updateNumber('depositAdded', depositNumber)
+    updateNumber('totalBalance', depositNumber)
 
-    document.getElementById('depositAdded').innerText = totalDeposit;
     document.getElementById('depositInput').value = "";
-
-    const balance = document.getElementById('totalBalance').innerText;
-    const floatedBalance = parseFloat(balance);
-    const finalBalance = totalDeposit + floatedBalance;
-
-    document.getElementById('totalBalance').innerText = finalBalance;
 })
+
+// common function
+function updateNumber(id, depositNumber) {
+    const amount = document.getElementById(id).innerText;
+    const current = parseFloat(amount);
+    const total = depositNumber + current;
+    document.getElementById(id).innerText = total;    
+}
+
+function transformFloat(id) {
+    const inputAmount = document.getElementById(id).value;
+    const number = parseFloat(inputAmount);
+    return number; 
+}
 
 // withdraw event handler
 const withdrawBtn = document.getElementById('withdraw-btn');
 withdrawBtn.addEventListener('click', function () {
-    const withdrawAmount = document.getElementById('withdraw').value;
-    const withdrawNumber = parseFloat(withdrawAmount);
+    const withdrawNumber = transformFloat('withdraw')
 
-    const withdrawSubtract = document.getElementById('withdrawMoney').innerText;
-    const currentWithdraw = parseFloat(withdrawSubtract);
-    const totalWithdraw = currentWithdraw + withdrawNumber;
+    updateNumber('withdrawMoney', withdrawNumber)
+    updateNumber('totalBalance', -1 *  withdrawNumber)
 
-    document.getElementById('withdrawMoney').innerText = totalWithdraw;
     document.getElementById('withdraw').value = "";
-
-    const balance = document.getElementById('totalBalance').innerText;
-    const floatedBalance = parseFloat(balance);
-    const finalBalance = floatedBalance - totalWithdraw;
-
-    document.getElementById('totalBalance').innerText = finalBalance;
 })
