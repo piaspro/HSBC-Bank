@@ -1,11 +1,12 @@
-#submit-area{
+#submit-area {
     margin: 40px;
     padding: 40px;
     height: 350px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px lightslategray;
 }
-.submit-btn{
+
+.submit-btn {
     border: none;
     border-radius: 5px;
     padding: 8px 20px;
@@ -15,38 +16,47 @@
     background-image: linear-gradient(rgb(37, 165, 224), rgb(11, 218, 138));
     transition: all 0.2s ease-in-out;
 }
-.submit-btn:hover{
+
+.submit-btn:hover {
     color: rgba(37, 37, 37, 0.651);
 }
-#transaction-area{
+
+#transaction-area {
     display: none;
     margin-top: 100px;
 }
-.status{
+
+.status {
     padding: 20px 15px;
     margin: 20px;
     border-radius: 10px;
 }
-.deposit{
+
+.deposit {
     background-color: yellowgreen;
 }
-.withdraw{
+
+.withdraw {
     background-color: tomato;
 }
-.balance{
+
+.balance {
     background-color: teal;
 }
-.col-md-3{
+
+.col-md-3 {
     margin-top: 10px;
     color: white;
     font-size: larger;
     font-weight: bold;
 }
-.depo-with-area{
+
+.depo-with-area {
     margin-top: 50px;
     margin-bottom: 100px;
 }
-.deck-adjustment{
+
+.deck-adjustment {
     padding: 50px 230px 50px 50px;
     margin: 20px;
     border-radius: 10px;
